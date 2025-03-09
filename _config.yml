@@ -1,5 +1,6 @@
 titel: Torutu
 #logo
-#description:
+description: >
+  Programmer | 42 Hive Helsinki | C, C++, Godot | Building games, tools, and habits.
 #show_downloads: true
 theme: jekyll-theme-cayman
