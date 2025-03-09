@@ -1,4 +1,3 @@
-# Welcome to My GitHub Page! 👋
 
 Hi there! I'm a passionate programmer and a student at **42 Hive Helsinki**, diving deep into the world of software development. I'm currently learning and working with **C++**, **C**, and **Godot** to build exciting projects and expand my skills.
 
