@@ -65,6 +65,34 @@
  opacity: 1;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 60px;
+  z-index: 1000;
+  display: block;
+  padding: 10px 10px;
+  background-color: var(--hover-color);
+  color: var(--primary-dark-color);
+  border: none;
+  border-radius: 6px;
+  font-family: var(--calm-font-family);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.back-to-top:hover {
+  background-color: var(--secondary-dark-color);
+  transform: translateX(-2px);
+}
+
+.back-to-top:active {
+  transform: scale(0.98);
+}
+
 /* Color Theme Changer Container */
 .colorChanger {
   position: absolute;
@@ -958,6 +986,15 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
+  }
+
+  .back-to-top:hover {
+    background-color: var(--secondary-dark-color);
+    transform: translateX(-2px);
+  }
+
+  .back-to-top:active {
+    transform: scale(0.98);
   }
 
   .collapsibleSection {

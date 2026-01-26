@@ -20,8 +20,6 @@ const setTheme = (theme: "dark-blue" | "dark-green" | "dark-red") => {
   document.documentElement.setAttribute("data-theme", theme);
 };
 
-
-
 export function Main() {
   const { page, selectedProject, setSelectedProject } = usePage();
   const previousPageRef = useRef(page);
@@ -47,13 +45,23 @@ export function Main() {
       pageContent = (
         <article className="rightSide__article">
           {projectContent[selectedProject as keyof typeof projectContent]}
+          <button
+            className="back-to-top"
+            onClick={() =>
+              containerRef.current?.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              })
+            }
+          >
+            ↑
+          </button>
         </article>
       );
       mobileNavContent = null; // Don't show project list when viewing a project
     } else {
-      // When no project selected, desktop shows nothing, mobile shows list
       pageContent = null;
-      mobileNavContent = <LeftProjectsText />;
+      mobileNavContent = <LeftProjectsText />;// When no project selected, desktop shows nothing, mobile shows list
     }
   } else if (page === "skills") {
     pageContent = (
