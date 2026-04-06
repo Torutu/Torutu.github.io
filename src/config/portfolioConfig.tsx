@@ -27,13 +27,13 @@ export const PROJECTS_CONFIG: ProjectData[] = [
   {
     id: "dhtools",
     name: "DHTools",
-    description: "A reference page for Daggerheart.",
+    description: "Content Browser and Search Platform - System reference for DaggerHeart",
     badges: ["react", "typescript", "html", "css"]
   },
   {
     id: "daggerforge",
     name: "Daggerforge",
-    description: "A tool that helps dungeon masters build session content fast.",
+    description: "Content Management - Obsidian Plugin for DaggerHeart",
     badges: ["typescript", "json", "html", "css"]
   },
   {
