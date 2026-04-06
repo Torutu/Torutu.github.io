@@ -5,6 +5,7 @@ import { rulebookParserContent } from "./content/rulebookParser";
 import { dithernatorContent } from "./content/dithernator";
 import { pingpongContent } from "./content/pingpong";
 import { minishellContent } from "./content/minishell";
+import { dhtoolsContent } from "./content/dhtools";
 import { PROJECTS_CONFIG, PORTFOLIO_CONFIG, BADGE_MAP } from "../config/portfolioConfig";
 import { icons } from "../components/icons";
 
@@ -28,7 +29,7 @@ export function LeftProjectsText() {
               {project.badges.map((badgeKey, i) => {
                 const badge = BADGE_MAP[(badgeKey as string).toLowerCase()];
                 if (!badge) return null;
-                
+
                 const IconComponent = icons[badge.icon];
                 return (
                   <div key={i} className="badge-item">
@@ -49,6 +50,7 @@ export function LeftProjectsText() {
 
 
 export const projectContent: Record<string, JSX.Element> = {
+  dhtools: dhtoolsContent,
   daggerforge: daggerforgeContent,
   rulebookparser: rulebookParserContent,
   pingpong: pingpongContent,

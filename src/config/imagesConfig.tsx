@@ -1,5 +1,6 @@
 import { OptimizedImage } from '../types/images';
 import daggerforgeImg from '../media/daggerforge.PNG';
+import dhtoolsImg from '../media/dhtools.PNG';
 
 // Example of how to import optimized variants (uncomment when files are created):
 // import daggerforgeWebp from '../media/daggerforge.webp';
@@ -17,7 +18,17 @@ export const IMAGES_CONFIG: Record<string, OptimizedImage> = {
     width: 1920,
     height: 1080,
   },
-  
+  dhtools: {
+    id: 'dhtools',
+    src: dhtoolsImg,
+    // srcWebp: dhtoolsWebp,           // Uncomment after running optimize-images.sh
+    // srcMobile: dhtoolsMobile,       // Uncomment after running optimize-images.sh
+    // srcMobileWebp: dhtoolsMobileWebp, // Uncomment after running optimize-images.sh
+    alt: 'DHTools Interface showing adversary browser, card builder, and dice roller',
+    width: 1280,
+    height: 720,
+  },
+
   // Template for adding new images:
   // imageName: {
   //   id: 'imageName',

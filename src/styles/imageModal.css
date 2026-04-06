@@ -51,8 +51,8 @@
 
 .image-modal__container {
   position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: min(90vw, 1280px);
+  max-height: min(90vh, 720px);
   animation: zoomIn 0.3s ease;
   cursor: default;
   -webkit-overflow-scrolling: touch;
@@ -76,8 +76,8 @@
 }
 
 .image-modal__enlarged {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: min(90vw, 1280px);
+  max-height: min(90vh, 720px);
   width: auto;
   height: auto;
   object-fit: contain;

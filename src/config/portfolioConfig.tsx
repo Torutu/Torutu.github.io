@@ -25,6 +25,12 @@ const BADGE_MAP: Record<string, Badge> = {
 
 export const PROJECTS_CONFIG: ProjectData[] = [
   {
+    id: "dhtools",
+    name: "DHTools",
+    description: "A reference page for Daggerheart.",
+    badges: ["react", "typescript", "html", "css"]
+  },
+  {
     id: "daggerforge",
     name: "Daggerforge",
     description: "A tool that helps dungeon masters build session content fast.",
