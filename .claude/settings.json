@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"\\\\\\\\wsl.localhost\\\\Debian\\\\home\\\\deb-toru\\\\projects\\\\Torutu.github.io\" -maxdepth 2 -type f \\\\\\( -name \"package.json\" -o -name \"tailwind.config.*\" -o -name \"index.html\" \\\\\\))",
+      "Read(//home/deb-toru/projects/Torutu.github.io/**)",
+      "Read(///wsl.localhost/Debian/home/deb-toru/projects/Torutu.github.io/**)",
+      "Read(//home/deb-toru/projects/Torutu.github.io/src/**)",
+      "Read(///wsl.localhost/Debian/home/deb-toru/projects/Torutu.github.io/src/**)",
+      "Read(//home/deb-toru/projects/Torutu.github.io/public/**)",
+      "Read(///wsl.localhost/Debian/home/deb-toru/projects/Torutu.github.io/public/**)",
+      "Read(//home/deb-toru/projects/Torutu.github.io/src/styles/**)",
+      "Read(///wsl.localhost/Debian/home/deb-toru/projects/Torutu.github.io/src/styles/**)",
+      "Read(//home/deb-toru/projects/Torutu.github.io/src/pages/content/**)",
+      "Read(///wsl.localhost/Debian/home/deb-toru/projects/Torutu.github.io/src/pages/content/**)",
+      "Read(//home/deb-toru/projects/Torutu.github.io/src/pages/**)",
+      "Read(///wsl.localhost/Debian/home/deb-toru/projects/Torutu.github.io/src/pages/**)",
+      "Read(//home/deb-toru/projects/Torutu.github.io/src/config/**)",
+      "Read(///wsl.localhost/Debian/home/deb-toru/projects/Torutu.github.io/src/config/**)",
+      "Bash(xargs grep *)"
+    ]
+  }
+}

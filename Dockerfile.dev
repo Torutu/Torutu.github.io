@@ -1,0 +1,10 @@
+FROM node:20-alpine
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install
+# src/ and public/ are mounted at runtime — not copied here
+EXPOSE 3000
+# Polling is required for file-watch to work on mounted volumes in WSL/Docker
+ENV CHOKIDAR_USEPOLLING=true
+ENV WATCHPACK_POLLING=true
+CMD ["npm", "start"]

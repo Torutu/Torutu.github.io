@@ -47,14 +47,14 @@ export function Footer() {
             )}
           </button>
         </nav>
-        <h1 className="footer__h">
-        <a className="footer__a" href="https://github.com/torutu" target="_blank" rel="noopener noreferrer">
-          <icons.GithubLogo />
-        </a>
-        <a className="footer__a" href="https://linkedin.com/in/walnaimi" target="_blank" rel="noopener noreferrer">
-          <icons.LinkedinLogo />
-        </a>
-        </h1>
+        <div className="footer__social">
+          <a className="footer__a" href="https://github.com/torutu" target="_blank" rel="noopener noreferrer">
+            <icons.GithubLogo />
+          </a>
+          <a className="footer__a" href="https://linkedin.com/in/walnaimi" target="_blank" rel="noopener noreferrer">
+            <icons.LinkedinLogo />
+          </a>
+        </div>
       </div>
     </footer>
   );

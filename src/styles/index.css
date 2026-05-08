@@ -91,7 +91,7 @@ box-sizing: border-box;
 } */
 
 /* ===== MOBILE LAYOUT - COMPLETE OVERHAUL ===== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .layout {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
