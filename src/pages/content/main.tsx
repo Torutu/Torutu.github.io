@@ -1,9 +1,10 @@
 import { usePage } from "../../utils/pageContext";
-import { projectContent } from "../projects";
-import { LeftAboutMeText } from "../aboutMe";
+import { projectContent, ProjectsEmptyState } from "../projects";
+import { LeftAboutMeText, RightAboutMe } from "../aboutMe";
 import { LeftProjectsText } from "../projects";
-import { LeftSkillsText } from "../skills";
+import { LeftSkillsText, RightSkills } from "../skills";
 import { ReactNode, useRef, useEffect } from "react";
+import { ThemePicker } from "../../components/ThemePicker";
 
 const verticalText = `
 #include <unistd.h>
@@ -15,10 +16,6 @@ void ft_putchar(char c)
 `;
 
 const horizontalText = `42 Hive Helsinki`;
-
-const setTheme = (theme: "dark-blue" | "dark-green" | "dark-red") => {
-  document.documentElement.setAttribute("data-theme", theme);
-};
 
 export function Main() {
   const { page, selectedProject, setSelectedProject } = usePage();
@@ -35,10 +32,11 @@ export function Main() {
   if (page === "aboutMe") {
     pageContent = (
       <section className="rightSide__section aboutMe-section">
-        {/* About me content handled by parent */}
+        <RightAboutMe />
       </section>
     );
-    mobileNavContent = <LeftAboutMeText />;
+    // On phones the footer is a tab bar, so the theme picker lives here instead
+    mobileNavContent = <><LeftAboutMeText /><div className="mobile-theme"><ThemePicker /></div><RightAboutMe /></>;
   } else if (page === "projects") {
     if (selectedProject) {
       // When viewing a project, show it in both desktop and mobile
@@ -60,16 +58,16 @@ export function Main() {
       );
       mobileNavContent = null; // Don't show project list when viewing a project
     } else {
-      pageContent = null;
-      mobileNavContent = <LeftProjectsText />;// When no project selected, desktop shows nothing, mobile shows list
+      pageContent = <ProjectsEmptyState />;
+      mobileNavContent = <LeftProjectsText />;// When no project selected, desktop shows a hint, mobile shows list
     }
   } else if (page === "skills") {
     pageContent = (
       <section className="rightSide__section skills-section">
-        {/* Skills content handled by parent */}
+        <RightSkills />
       </section>
     );
-    mobileNavContent = <LeftSkillsText />;
+    mobileNavContent = <><LeftSkillsText /><RightSkills /></>;
   }
 
   return (
@@ -104,14 +102,6 @@ export function Main() {
         <div className="desktop-content">
           {pageContent}
         </div>
-        {/* about me svg art rightside */}
-        {page === "aboutMe" && (
-          <div className="colorChanger">
-            <button className="colorChanger__button_blue" onClick={() => setTheme("dark-blue")}></button>
-            <button className="colorChanger__button_green" onClick={() => setTheme("dark-green")}></button>
-            <button className="colorChanger__button_red" onClick={() => setTheme("dark-red")}></button>
-          </div>
-        )}
       </div>
     </main>
   );

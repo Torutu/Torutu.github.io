@@ -1,76 +1,124 @@
-/* https://www.csshero.org/mesher/ <- background made with*/ 
-/* Neue Montreal font */
 @import 'animation.css';
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Outfit:wght@100..900&display=swap');
 
+/*
+  Themes. Each one is a palette plus a background pattern.
+  They are attribute rules (not just :root) so a theme swatch can carry data-theme and preview its own colors.
+  The theme list itself lives in THEMES (src/config/portfolioConfig.tsx).
+*/
 :root {
-  --primary-dark-color: #070d29;
-  --secondary-dark-color: #1b4973;
-  --secondary-dark-color-fade: #1b487367; /* <- SIX SEVEEEN */
-  --primary-light-color:#52cbbe;
-  --header-primary-light-color: #f0f0f0;
-  --hover-color: #52cbbe67;
-  --badge-color: #748eff;
-  --tiny-text-color: #a5a5a5;
-  --background-dark-gradient: #020218;
-  --background-light-gradient: #0b306a;
   --font-family: 'IBM Plex Mono', monospace;
   --calm-font-family: 'Lexend', sans-serif;
   --tiny-font-family: 'Outfit', sans-serif;
   --pixel-font-family: 'Doto', sans-serif;
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
 }
 
-:root[data-theme="dark-blue"] {
-  --primary-dark-color: #070d29;
-  --secondary-dark-color: #1b4973;
-  --secondary-dark-color-fade: #1b487367; /* <- SIX SEVEEEN */
-  --primary-light-color:#52cbbe;
-  --header-primary-light-color: #f0f0f0;
-  --hover-color: #52cbbe67;
-  --badge-color: #748eff;
-  --tiny-text-color: #a5a5a5;
-  --background-dark-gradient: hsla(240,85%,5%,1);
-  --background-light-gradient: hsla(217,81%,23%,1);
-  --font-family: 'IBM Plex Mono', monospace;
-  --calm-font-family: 'Lexend', sans-serif;
-  --tiny-font-family: 'Outfit', sans-serif;
-  --pixel-font-family: 'Doto', sans-serif;
+/* Midnight: navy and cyan on an engineering grid (default) */
+:root,
+[data-theme="midnight"] {
+  --background-dark-gradient: #060912;
+  --background-light-gradient: #0f1b38;
+  --primary-dark-color: #0a0f1e;
+  --secondary-dark-color: #142039;
+  --secondary-dark-color-fade: rgba(125, 165, 255, 0.06);
+  --primary-light-color: #67e8f9;
+  --header-primary-light-color: #e6edf7;
+  --hover-color: rgba(103, 232, 249, 0.2);
+  --secondary-light-color: rgba(103, 232, 249, 0.35);
+  --badge-color: #818cf8;
+  --tiny-text-color: #8592a8;
+  --glow-a: rgba(56, 189, 248, 0.16);
+  --glow-b: rgba(99, 102, 241, 0.14);
+  --pattern-color: rgba(148, 163, 184, 0.08);
+  --pattern-image:
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--pattern-color) 1px, transparent 1px);
+  --pattern-size: 56px 56px;
 }
 
-:root[data-theme="dark-green"] {
-  --primary-dark-color: #0a1f0b;
-  --secondary-dark-color: #0f3d33;
-  --secondary-dark-color-fade: #09460470;
-  --primary-light-color: #25bb12;
-  --header-primary-light-color: #f0f0f0;
-  --hover-color: #24af1170;
-  --badge-color: #27ad23;
-  --background-dark-gradient: #0b1f0a;
-  --background-light-gradient: #0f3d15;
-    --font-family: 'IBM Plex Mono', monospace;
-  --calm-font-family: 'Lexend', sans-serif;
-  --tiny-font-family: 'Outfit', sans-serif;
-  --pixel-font-family: 'Doto', sans-serif;
+/* Graphite: neutral monochrome on a dot matrix */
+[data-theme="graphite"] {
+  --background-dark-gradient: #09090b;
+  --background-light-gradient: #1c1c21;
+  --primary-dark-color: #0c0c0e;
+  --secondary-dark-color: #1d1d22;
+  --secondary-dark-color-fade: rgba(255, 255, 255, 0.04);
+  --primary-light-color: #e4e4e7;
+  --header-primary-light-color: #fafafa;
+  --hover-color: rgba(255, 255, 255, 0.13);
+  --secondary-light-color: rgba(255, 255, 255, 0.25);
+  --badge-color: #a1a1aa;
+  --tiny-text-color: #8b8b94;
+  --glow-a: rgba(255, 255, 255, 0.06);
+  --glow-b: rgba(161, 161, 170, 0.06);
+  --pattern-color: rgba(255, 255, 255, 0.11);
+  --pattern-image: radial-gradient(var(--pattern-color) 1px, transparent 1.6px);
+  --pattern-size: 22px 22px;
 }
 
-:root[data-theme="dark-red"] {
-  --primary-dark-color: #2a0a0a;
-  --secondary-dark-color: #4d1f1f;
-  --secondary-dark-color-fade: #4d1f1f70;
-  --primary-light-color: #fa3030;
-  --header-primary-light-color: #f0f0f0;
-  --hover-color: #ff4d4d70;
-  --badge-color: #ff6666;
-  --background-dark-gradient: #2a0a0a;
-  --background-light-gradient: #4d1f1f;
-    --font-family: 'IBM Plex Mono', monospace;
-  --calm-font-family: 'Lexend', sans-serif;
-  --tiny-font-family: 'Outfit', sans-serif;
-  --pixel-font-family: 'Doto', sans-serif;
+/* Nebula: violet and pink over a blueprint grid */
+[data-theme="nebula"] {
+  --background-dark-gradient: #0a0815;
+  --background-light-gradient: #1d1440;
+  --primary-dark-color: #0e0b1c;
+  --secondary-dark-color: #211a42;
+  --secondary-dark-color-fade: rgba(167, 139, 250, 0.06);
+  --primary-light-color: #b49cff;
+  --header-primary-light-color: #ede9fe;
+  --hover-color: rgba(180, 156, 255, 0.22);
+  --secondary-light-color: rgba(180, 156, 255, 0.38);
+  --badge-color: #f472b6;
+  --tiny-text-color: #988fb8;
+  --glow-a: rgba(139, 92, 246, 0.2);
+  --glow-b: rgba(236, 72, 153, 0.11);
+  --pattern-color: rgba(196, 181, 253, 0.09);
+  --pattern-image:
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(rgba(196, 181, 253, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196, 181, 253, 0.035) 1px, transparent 1px);
+  --pattern-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
 }
 
-:root {
-  transition: all 0.8s ease;
+/* Terminal: phosphor green on CRT scanlines */
+[data-theme="terminal"] {
+  --background-dark-gradient: #040b08;
+  --background-light-gradient: #0b2a1d;
+  --primary-dark-color: #06100c;
+  --secondary-dark-color: #0f2a1f;
+  --secondary-dark-color-fade: rgba(52, 211, 153, 0.055);
+  --primary-light-color: #4ade80;
+  --header-primary-light-color: #e2f5ea;
+  --hover-color: rgba(74, 222, 128, 0.2);
+  --secondary-light-color: rgba(74, 222, 128, 0.35);
+  --badge-color: #2dd4bf;
+  --tiny-text-color: #7fa08f;
+  --glow-a: rgba(34, 197, 94, 0.14);
+  --glow-b: rgba(45, 212, 191, 0.1);
+  --pattern-color: rgba(134, 239, 172, 0.05);
+  --pattern-image: repeating-linear-gradient(0deg, var(--pattern-color) 0 1px, transparent 1px 4px);
+  --pattern-size: auto;
+}
+
+/* Ember: warm amber with a fine dot grid */
+[data-theme="ember"] {
+  --background-dark-gradient: #0e0907;
+  --background-light-gradient: #2a170e;
+  --primary-dark-color: #120c09;
+  --secondary-dark-color: #2b1b12;
+  --secondary-dark-color-fade: rgba(251, 146, 60, 0.055);
+  --primary-light-color: #fdba74;
+  --header-primary-light-color: #faefe8;
+  --hover-color: rgba(253, 186, 116, 0.2);
+  --secondary-light-color: rgba(253, 186, 116, 0.35);
+  --badge-color: #fb7185;
+  --tiny-text-color: #a8968b;
+  --glow-a: rgba(249, 115, 22, 0.15);
+  --glow-b: rgba(244, 63, 94, 0.09);
+  --pattern-color: rgba(253, 186, 116, 0.1);
+  --pattern-image: radial-gradient(var(--pattern-color) 0.9px, transparent 1.4px);
+  --pattern-size: 16px 16px;
 }
 
 .App {
@@ -78,47 +126,46 @@
   height: 100%;
   display: grid;
   overflow: hidden;
-  background-color: var(--background-dark-gradient);
+  background: var(--noise), var(--background-dark-gradient);
 }
 
-/* Your gradients — unchanged except for movement */
+/* Soft accent glows that drift slowly */
 .App::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -20%;
   pointer-events: none;
   z-index: 0;
-
-  background-image:
-    radial-gradient(at 73% 60%, var(--background-dark-gradient) 0px, transparent 50%),
-    radial-gradient(at 5% 93%, var(--background-dark-gradient) 0px, transparent 50%),
-    radial-gradient(at 97% 64%, var(--background-dark-gradient) 0px, transparent 50%),
-    radial-gradient(at 83% 93%, var(--background-dark-gradient) 0px, transparent 50%),
-    radial-gradient(at 18% 15%, var(--background-dark-gradient) 0px, transparent 50%),
-    radial-gradient(at 63% 26%, var(--background-light-gradient) 0px, transparent 80%),
-    radial-gradient(at 43% 36%, var(--background-light-gradient) 0px, transparent 80%),
-    radial-gradient(at 23% 26%, var(--background-light-gradient) 0px, transparent 100%);
-
-  animation: wanderBackground 15s linear infinite;
-  background-size: 120% 120%;
-  background-repeat: no-repeat;
+  background:
+    radial-gradient(40% 35% at 72% 18%, var(--glow-a), transparent 70%),
+    radial-gradient(35% 40% at 18% 82%, var(--glow-b), transparent 70%),
+    radial-gradient(60% 50% at 50% 50%, var(--background-light-gradient), transparent 75%);
+  animation: driftGlow 28s ease-in-out infinite alternate;
 }
 
-/* Blur overlay */
+/* Theme pattern, faded out towards the edges */
 .App::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-
-  backdrop-filter: blur(28px); /* adjust strength here */
+  background-image: var(--pattern-image);
+  background-size: var(--pattern-size);
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, #000 35%, transparent 100%);
 }
 
 /* Keep your content on top */
 .App > * {
   position: relative;
   z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .App::before {
+    animation: none;
+  }
 }
 
 

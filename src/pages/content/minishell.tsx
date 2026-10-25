@@ -196,6 +196,9 @@ const featureBreakdown = (
 export const minishellContent = (
   <>
     <h1 className="rightSide__h">Minishell</h1>
+    <div className="project-cta">
+      <a className="project-cta__secondary" href="https://github.com/Torutu/minishell" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
     {whatIsMinishell}
     {featureBreakdown}
   </>

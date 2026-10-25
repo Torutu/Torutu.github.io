@@ -149,6 +149,9 @@ const featureBreakdown = (
 export const dhtoolsContent = (
     <>
         <h1 className="rightSide__h">DHTools</h1>
+        <div className="project-cta">
+            <a className="project-cta__primary" href="https://www.dhtools.net" target="_blank" rel="noopener noreferrer">Visit dhtools.net ↗</a>
+        </div>
         {whatIsDhtools}
         {featureBreakdown}
     </>

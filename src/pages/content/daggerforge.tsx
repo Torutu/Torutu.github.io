@@ -7,11 +7,18 @@ const whatIsDaggerforge = (
     <h2 className="rightSideSection__h2">What is Daggerforge?</h2>
     <p className="rightSideSection__p">
       Daggerforge is an Obsidian plugin that helps people prepare and manage tabletop game sessions more easily.
-      It lets users browse and organize game elements, create custom content, and insert it directly into their notes. 
-      It includes tools for building interactive cards, tracking values, rolling dice, calculating encounter difficulty, 
-      and arranging everything visually on Obsidian's canvas.
+      It lets users browse and organize game elements, create custom content, and insert it directly into their notes.
+      It includes tools for building interactive cards, tracking values, rolling dice, calculating encounter difficulty,
+      and arranging everything visually on Obsidian's canvas. It has reached 7,000+ downloads with an active community.
     </p>
   </>
+);
+
+const links = (
+  <div className="project-cta">
+    <a className="project-cta__primary" href="#daggerforge-guide">Read the illustrated guide →</a>
+    <a className="project-cta__secondary" href="https://github.com/Torutu/daggerforge" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  </div>
 );
 
 const AdversaryBrowser = (
@@ -197,6 +204,7 @@ const featureBreakdown = (
 export const daggerforgeContent = (
   <>
     <h1 className="rightSide__h">Daggerforge</h1>
+    {links}
     {whatIsDaggerforge}
     {featureBreakdown}
   </>
